@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		35A284E62BAB1E620089263A /* DictionaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A284E52BAB1E620089263A /* DictionaryApp.swift */; };
-		35A284E82BAB1E620089263A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A284E72BAB1E620089263A /* ContentView.swift */; };
+		35A284E82BAB1E620089263A /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A284E72BAB1E620089263A /* DictionaryView.swift */; };
 		35A284EA2BAB1E630089263A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35A284E92BAB1E630089263A /* Assets.xcassets */; };
 		35A284EE2BAB1E630089263A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35A284ED2BAB1E630089263A /* Preview Assets.xcassets */; };
-		35A284F82BAB1E630089263A /* DictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A284F72BAB1E630089263A /* DictionaryTests.swift */; };
+		35A284F82BAB1E630089263A /* DictionaryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A284F72BAB1E630089263A /* DictionaryViewModelTests.swift */; };
 		35A285022BAB1E630089263A /* DictionaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A285012BAB1E630089263A /* DictionaryUITests.swift */; };
-		35A285042BAB1E630089263A /* DictionaryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A285032BAB1E630089263A /* DictionaryUITestsLaunchTests.swift */; };
+		35A285112BAB38C30089263A /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A285102BAB38C30089263A /* NetworkService.swift */; };
+		35A285132BAB38E10089263A /* DictionaryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A285122BAB38E10089263A /* DictionaryService.swift */; };
+		35A285152BAB39420089263A /* DictionaryDefinition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A285142BAB39420089263A /* DictionaryDefinition.swift */; };
+		35A285172BAB39750089263A /* DictionaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A285162BAB39750089263A /* DictionaryViewModel.swift */; };
+		35A2851C2BAB53810089263A /* DictionaryServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A2851B2BAB53810089263A /* DictionaryServiceTests.swift */; };
+		35A2851E2BAB60870089263A /* JSONResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A2851D2BAB60870089263A /* JSONResponses.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,15 +41,22 @@
 /* Begin PBXFileReference section */
 		35A284E22BAB1E620089263A /* Dictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A284E52BAB1E620089263A /* DictionaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryApp.swift; sourceTree = "<group>"; };
-		35A284E72BAB1E620089263A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		35A284E72BAB1E620089263A /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
 		35A284E92BAB1E630089263A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35A284EB2BAB1E630089263A /* Dictionary.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Dictionary.entitlements; sourceTree = "<group>"; };
 		35A284ED2BAB1E630089263A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		35A284F32BAB1E630089263A /* DictionaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DictionaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		35A284F72BAB1E630089263A /* DictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryTests.swift; sourceTree = "<group>"; };
+		35A284F72BAB1E630089263A /* DictionaryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewModelTests.swift; sourceTree = "<group>"; };
 		35A284FD2BAB1E630089263A /* DictionaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DictionaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		35A285012BAB1E630089263A /* DictionaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryUITests.swift; sourceTree = "<group>"; };
-		35A285032BAB1E630089263A /* DictionaryUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		35A285102BAB38C30089263A /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		35A285122BAB38E10089263A /* DictionaryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryService.swift; sourceTree = "<group>"; };
+		35A285142BAB39420089263A /* DictionaryDefinition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryDefinition.swift; sourceTree = "<group>"; };
+		35A285162BAB39750089263A /* DictionaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewModel.swift; sourceTree = "<group>"; };
+		35A2851A2BAB50220089263A /* Dictionary.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Dictionary.xctestplan; sourceTree = "<group>"; };
+		35A2851B2BAB53810089263A /* DictionaryServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryServiceTests.swift; sourceTree = "<group>"; };
+		35A2851D2BAB60870089263A /* JSONResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONResponses.swift; sourceTree = "<group>"; };
+		35A2851F2BAB71610089263A /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +87,8 @@
 		35A284D92BAB1E620089263A = {
 			isa = PBXGroup;
 			children = (
+				35A2851F2BAB71610089263A /* README.md */,
+				35A2851A2BAB50220089263A /* Dictionary.xctestplan */,
 				35A284E42BAB1E620089263A /* Dictionary */,
 				35A284F62BAB1E630089263A /* DictionaryTests */,
 				35A285002BAB1E630089263A /* DictionaryUITests */,
@@ -96,7 +110,10 @@
 			isa = PBXGroup;
 			children = (
 				35A284E52BAB1E620089263A /* DictionaryApp.swift */,
-				35A284E72BAB1E620089263A /* ContentView.swift */,
+				35A284E72BAB1E620089263A /* DictionaryView.swift */,
+				35A285162BAB39750089263A /* DictionaryViewModel.swift */,
+				35A285192BAB48AD0089263A /* Model */,
+				35A285182BAB489D0089263A /* Network */,
 				35A284E92BAB1E630089263A /* Assets.xcassets */,
 				35A284EB2BAB1E630089263A /* Dictionary.entitlements */,
 				35A284EC2BAB1E630089263A /* Preview Content */,
@@ -115,7 +132,8 @@
 		35A284F62BAB1E630089263A /* DictionaryTests */ = {
 			isa = PBXGroup;
 			children = (
-				35A284F72BAB1E630089263A /* DictionaryTests.swift */,
+				35A284F72BAB1E630089263A /* DictionaryViewModelTests.swift */,
+				35A2851B2BAB53810089263A /* DictionaryServiceTests.swift */,
 			);
 			path = DictionaryTests;
 			sourceTree = "<group>";
@@ -124,9 +142,26 @@
 			isa = PBXGroup;
 			children = (
 				35A285012BAB1E630089263A /* DictionaryUITests.swift */,
-				35A285032BAB1E630089263A /* DictionaryUITestsLaunchTests.swift */,
+				35A2851D2BAB60870089263A /* JSONResponses.swift */,
 			);
 			path = DictionaryUITests;
+			sourceTree = "<group>";
+		};
+		35A285182BAB489D0089263A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				35A285122BAB38E10089263A /* DictionaryService.swift */,
+				35A285102BAB38C30089263A /* NetworkService.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		35A285192BAB48AD0089263A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				35A285142BAB39420089263A /* DictionaryDefinition.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +294,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35A284E82BAB1E620089263A /* ContentView.swift in Sources */,
+				35A285172BAB39750089263A /* DictionaryViewModel.swift in Sources */,
+				35A284E82BAB1E620089263A /* DictionaryView.swift in Sources */,
+				35A285132BAB38E10089263A /* DictionaryService.swift in Sources */,
+				35A285112BAB38C30089263A /* NetworkService.swift in Sources */,
 				35A284E62BAB1E620089263A /* DictionaryApp.swift in Sources */,
+				35A285152BAB39420089263A /* DictionaryDefinition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,7 +307,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35A284F82BAB1E630089263A /* DictionaryTests.swift in Sources */,
+				35A284F82BAB1E630089263A /* DictionaryViewModelTests.swift in Sources */,
+				35A2851C2BAB53810089263A /* DictionaryServiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				35A285042BAB1E630089263A /* DictionaryUITestsLaunchTests.swift in Sources */,
+				35A2851E2BAB60870089263A /* JSONResponses.swift in Sources */,
 				35A285022BAB1E630089263A /* DictionaryUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,10 +480,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.andrewstyles.Dictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -476,10 +517,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.andrewstyles.Dictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

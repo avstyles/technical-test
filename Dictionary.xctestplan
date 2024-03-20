@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "9C4EFE85-A2BB-4FBB-AC5E-3FAAB6EBFC48",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:Dictionary.xcodeproj",
+      "identifier" : "35A284E12BAB1E620089263A",
+      "name" : "Dictionary"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Dictionary.xcodeproj",
+        "identifier" : "35A284F22BAB1E630089263A",
+        "name" : "DictionaryTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:Dictionary.xcodeproj",
+        "identifier" : "35A284FC2BAB1E630089263A",
+        "name" : "DictionaryUITests"
+      }
+    }
+  ],
+  "version" : 1
+}

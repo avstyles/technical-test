@@ -1,7 +1,4 @@
 //
-//  DictionaryUITests.swift
-//  DictionaryUITests
-//
 //  Created by Andrew Styles on 20/03/2024.
 //
 
@@ -9,33 +6,55 @@ import XCTest
 
 final class DictionaryUITests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
-
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testDictionaryView_hasExpectedElements() throws {
         let app = XCUIApplication()
         app.launch()
 
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
+        XCTAssertTrue(app.staticTexts["Dictionary"].exists)
+        XCTAssertTrue(app.buttons["Submit"].exists)
+        XCTAssertTrue(app.textFields["Enter any word"].exists)
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+    }
+    
+    func testDictionaryView_submitButtonEnablesWhenValueEntered() throws {
+        let app = XCUIApplication()
+        app.launch()
+         
+        let submitButton = app.buttons["Submit"]
+        let textField = app.textFields["Enter any word"]
+                            
+        XCTAssertFalse(submitButton.isEnabled)
+        textField.tap()
+        textField.typeText("test")
+        XCTAssertTrue(submitButton.isEnabled)
+    }
+    
+    func testDictionaryView_submitWord_showsExpectedResponse() throws {
+        let app = XCUIApplication()
+        app.launchArguments.append("UI_Testing")
+        app.launchEnvironment["https://api.dictionaryapi.dev/api/v2/entries/en/test"] = JSONResponses.testJSONResponse
+        app.launch()
+        
+         
+        let submitButton = app.buttons["Submit"]
+        let textField = app.textFields["Enter any word"]
+                            
+        XCTAssertFalse(submitButton.isEnabled)
+        textField.tap()
+        textField.typeText("test")
+        XCTAssertTrue(submitButton.isEnabled)
+        submitButton.tap()
+        
+        XCTAssertTrue(app.staticTexts["test"].exists)
+        XCTAssertTrue(app.staticTexts["noun"].exists)
+        
+        XCTAssertTrue(app.staticTexts["1."].exists)
+        XCTAssertTrue(app.staticTexts["A challenge, trial."].exists)
+
+        XCTAssertTrue(app.staticTexts["2."].exists)
+        XCTAssertTrue(app.staticTexts["A cupel or cupelling hearth in which precious metals are melted for trial and refinement."].exists)
+
+        XCTAssertTrue(app.staticTexts["3."].exists)
+        XCTAssertTrue(app.staticTexts["(academia) An examination, given often during the academic term."].exists)
     }
 }
